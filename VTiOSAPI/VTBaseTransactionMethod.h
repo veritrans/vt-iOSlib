@@ -9,8 +9,11 @@
 #ifndef VTiOSAPI_VTBaseTransactionMethod_h
 #define VTiOSAPI_VTBaseTransactionMethod_h
 
+#define UnsupportedMethodException @"UnsupportedMethodException"
+
 #import <Foundation/Foundation.h>
 #import "VTBaseTransaction.h"
+#import "VTToken.h"
 
 @interface VTBaseTransactionMethod : NSObject
 
@@ -19,6 +22,7 @@
 -(void)preAuthorize;
 -(void)capture;
 -(void)charge;
+-(void) getToken:(void(^)(VTToken* token, NSException* exception)) completionHandler;
 
 @end
 

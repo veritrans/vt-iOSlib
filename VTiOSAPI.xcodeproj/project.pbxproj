@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA9F52F21A3AA05600F1543D /* VTTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F52F11A3AA05600F1543D /* VTTokenTest.m */; };
 		DAA275381A3944AE00940A14 /* VTAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA275371A3944AE00940A14 /* VTAddress.m */; };
 		DAA2753A1A3947CD00940A14 /* VTAddressTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA275391A3947CD00940A14 /* VTAddressTest.m */; };
 		DAA2753D1A394EBB00940A14 /* VTBaseTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2753C1A394EBB00940A14 /* VTBaseTransaction.m */; };
@@ -20,6 +21,7 @@
 		DAA275551A399A8D00940A14 /* VTTransactionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA275541A399A8D00940A14 /* VTTransactionDetails.m */; };
 		DAA275571A39A02700940A14 /* VTTransactionDetailsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA275561A39A02700940A14 /* VTTransactionDetailsTest.m */; };
 		DAA2755C1A39A3DB00940A14 /* VTBaseTransactionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2755B1A39A3DB00940A14 /* VTBaseTransactionTest.m */; };
+		DAA2755F1A39A98800940A14 /* VTDirect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2755E1A39A98800940A14 /* VTDirect.m */; };
 		DAB051AB1A384F2F0059AB98 /* libVTiOSAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0519F1A384F2F0059AB98 /* libVTiOSAPI.a */; };
 		DAB051BA1A384F710059AB98 /* VTBaseTransactionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB051B91A384F710059AB98 /* VTBaseTransactionMethod.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA9F52F11A3AA05600F1543D /* VTTokenTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTokenTest.m; sourceTree = "<group>"; };
 		DAA275371A3944AE00940A14 /* VTAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTAddress.m; sourceTree = "<group>"; };
 		DAA275391A3947CD00940A14 /* VTAddressTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTAddressTest.m; sourceTree = "<group>"; };
 		DAA2753B1A394EA200940A14 /* VTBaseTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBaseTransaction.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		DAA275541A399A8D00940A14 /* VTTransactionDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTransactionDetails.m; sourceTree = "<group>"; };
 		DAA275561A39A02700940A14 /* VTTransactionDetailsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTransactionDetailsTest.m; sourceTree = "<group>"; };
 		DAA2755B1A39A3DB00940A14 /* VTBaseTransactionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBaseTransactionTest.m; sourceTree = "<group>"; };
+		DAA2755D1A39A98800940A14 /* VTDirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTDirect.h; sourceTree = "<group>"; };
+		DAA2755E1A39A98800940A14 /* VTDirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTDirect.m; sourceTree = "<group>"; };
 		DAB0519F1A384F2F0059AB98 /* libVTiOSAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVTiOSAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB051AA1A384F2F0059AB98 /* VTiOSAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VTiOSAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB051B01A384F2F0059AB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 				DAB051BC1A3851850059AB98 /* VTModel */,
 				DAB051B91A384F710059AB98 /* VTBaseTransactionMethod.m */,
 				DAB051BB1A384F910059AB98 /* VTBaseTransactionMethod.h */,
+				DAA2755D1A39A98800940A14 /* VTDirect.h */,
+				DAA2755E1A39A98800940A14 /* VTDirect.m */,
 			);
 			path = VTiOSAPI;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 			children = (
 				DAA275451A39845600940A14 /* VTModel */,
 				DAB051AF1A384F2F0059AB98 /* Supporting Files */,
+				DA9F52F11A3AA05600F1543D /* VTTokenTest.m */,
 			);
 			path = VTiOSAPITests;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			files = (
 				DAB051BA1A384F710059AB98 /* VTBaseTransactionMethod.m in Sources */,
 				DAA2754F1A39973500940A14 /* VTItemDetails.m in Sources */,
+				DAA2755F1A39A98800940A14 /* VTDirect.m in Sources */,
 				DAA275521A3999E600940A14 /* VTToken.m in Sources */,
 				DAA2753D1A394EBB00940A14 /* VTBaseTransaction.m in Sources */,
 				DAA2754C1A3995FD00940A14 /* VTCustomerDetails.m in Sources */,
@@ -291,6 +300,7 @@
 				DAA275471A39847B00940A14 /* VTCardDetailsTest.m in Sources */,
 				DAA2753A1A3947CD00940A14 /* VTAddressTest.m in Sources */,
 				DAA275571A39A02700940A14 /* VTTransactionDetailsTest.m in Sources */,
+				DA9F52F21A3AA05600F1543D /* VTTokenTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

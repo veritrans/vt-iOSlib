@@ -10,7 +10,7 @@
 
 @interface VTToken : NSObject
 
-@property(nonatomic,assign) NSInteger status_code;
+@property(nonatomic,copy) NSString* status_code;
 @property(nonatomic,copy) NSString* status_message;
 @property(nonatomic,copy) NSString* redirect_url;
 @property(nonatomic,copy) NSString* token_id;

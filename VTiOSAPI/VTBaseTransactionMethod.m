@@ -25,5 +25,9 @@
     [NSException raise:NSInternalInconsistencyException format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
+-(void)getToken:(void (^)(VTToken *, NSException *))completionHandler{
+    [NSException raise:NSInternalInconsistencyException format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
 @end
 
