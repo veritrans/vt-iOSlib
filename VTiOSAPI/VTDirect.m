@@ -42,6 +42,8 @@
                 token.token_id = [jsonParsed objectForKey:@"token_id"];
                 token.status_code = [jsonParsed objectForKey:@"status_code"];
                 token.status_message = [jsonParsed objectForKey:@"status_message"];
+                token.redirect_url = [jsonParsed objectForKey:@"redirect_url"];
+                token.bank = [jsonParsed objectForKey:@"bank"];
                 completionHandler(token,nil);
             }else{
                 NSException* exception = [[NSException alloc] initWithName:@"JsonParsedException" reason:error.localizedDescription userInfo:error.userInfo];
