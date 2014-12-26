@@ -43,6 +43,7 @@
                 token.status_code = [jsonParsed objectForKey:@"status_code"];
                 token.status_message = [jsonParsed objectForKey:@"status_message"];
                 token.redirect_url = [jsonParsed objectForKey:@"redirect_url"];
+                
                 token.bank = [jsonParsed objectForKey:@"bank"];
                 completionHandler(token,nil);
             }else{
