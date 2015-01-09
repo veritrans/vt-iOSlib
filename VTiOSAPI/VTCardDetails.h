@@ -24,6 +24,7 @@
 @property (nonatomic,assign) BOOL secure;
 
 -(NSString*) getParamUrl;
+-(NSString*) getBankParam;
 
 
 @end

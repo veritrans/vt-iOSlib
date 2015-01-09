@@ -28,6 +28,16 @@
     [super tearDown];
 }
 
+-(void)testGenerateBankParam {
+    VTCardDetails* cardDetails = [[VTCardDetails alloc]init];
+    NSLog(@"Bank Param %@",[cardDetails getBankParam]);
+    XCTAssert([[cardDetails getBankParam] isEqualToString:@""]);
+    //set card bank
+    cardDetails.bank = @"bni";
+    XCTAssert([[cardDetails getBankParam] isEqualToString:@"&bank=bni"]);
+    
+}
+
 - (void)testGeneratejsonSecure {
     VTCardDetails* cardDetails = [[VTCardDetails alloc] init];
     cardDetails.card_number = @"4811111111111114";
@@ -38,10 +48,18 @@
     
     NSString* url = [NSString stringWithFormat:@"%@%@",[VTConfig getTokenUrl],[cardDetails getParamUrl]];
     
-    NSString* testUrl = [NSString stringWithFormat:@"%@%@",[VTConfig getTokenUrl],[NSString stringWithFormat:@"?card_number=4811111111111114&card_exp_month=1&card_exp_year=2020&card_cvv=123&client_key=%@&secure=false&bank=bni&gross_amount=10000",[VTConfig CLIENT_KEY]]];
+    NSString* testUrl = [NSString stringWithFormat:@"%@%@",[VTConfig getTokenUrl],[NSString stringWithFormat:@"?card_number=4811111111111114&card_exp_month=1&card_exp_year=2020&card_cvv=123&client_key=%@&secure=false&gross_amount=10000",[VTConfig CLIENT_KEY]]];
     NSLog(@"url: %@",url);
     NSLog(@"testUrl: %@",testUrl);
     XCTAssert([url isEqualToString:testUrl]);
+    
+    //test url with bank
+    cardDetails.bank = @"bni";
+    NSString* urlWithBank = [NSString stringWithFormat:@"%@%@",[VTConfig getTokenUrl],[cardDetails getParamUrl]];
+    NSString* testUrlWithBank = [NSString stringWithFormat:@"%@%@",[VTConfig getTokenUrl],[NSString stringWithFormat:@"?card_number=4811111111111114&card_exp_month=1&card_exp_year=2020&card_cvv=123&client_key=%@&secure=false&bank=bni&gross_amount=10000",[VTConfig CLIENT_KEY]]];
+    NSLog(@"URL With Bank: %@",[cardDetails getBankParam]);
+    XCTAssert([urlWithBank isEqualToString:testUrlWithBank]);
+
 }
 
 - (void)testPerformanceExample {
