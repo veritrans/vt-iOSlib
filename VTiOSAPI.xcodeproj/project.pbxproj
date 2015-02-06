@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DA3472A91A837D1D001D6417 /* UniversalVTMobileLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DA3472AA1A837D1D001D6417 /* Build configuration list for PBXAggregateTarget "UniversalVTMobileLib" */;
+			buildPhases = (
+				DA3472AD1A837D3C001D6417 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalVTMobileLib;
+			productName = UniversalVTMobileLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		DA9F52F21A3AA05600F1543D /* VTTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F52F11A3AA05600F1543D /* VTTokenTest.m */; };
 		DAA275381A3944AE00940A14 /* VTAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA275371A3944AE00940A14 /* VTAddress.m */; };
@@ -237,6 +251,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Veritrans Indonesia";
 				TargetAttributes = {
+					DA3472A91A837D1D001D6417 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					DAB0519E1A384F2F0059AB98 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -259,6 +276,7 @@
 			targets = (
 				DAB0519E1A384F2F0059AB98 /* VTiOSAPI */,
 				DAB051A91A384F2F0059AB98 /* VTiOSAPITests */,
+				DA3472A91A837D1D001D6417 /* UniversalVTMobileLib */,
 			);
 		};
 /* End PBXProject section */
@@ -272,6 +290,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA3472AD1A837D3C001D6417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target VTiOSAPI ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target VTiOSAPI -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# Last touch. copy the header files. Just for convenience\n#cp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAB0519B1A384F2F0059AB98 /* Sources */ = {
@@ -315,6 +349,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DA3472AB1A837D1D001D6417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA3472AC1A837D1D001D6417 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		DAB051B11A384F2F0059AB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,8 +440,10 @@
 		DAB051B41A384F2F0059AB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -401,8 +451,10 @@
 		DAB051B51A384F2F0059AB98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -410,6 +462,7 @@
 		DAB051B71A384F2F0059AB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -421,12 +474,14 @@
 				INFOPLIST_FILE = VTiOSAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
 			};
 			name = Debug;
 		};
 		DAB051B81A384F2F0059AB98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -434,12 +489,21 @@
 				INFOPLIST_FILE = VTiOSAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA3472AA1A837D1D001D6417 /* Build configuration list for PBXAggregateTarget "UniversalVTMobileLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3472AB1A837D1D001D6417 /* Debug */,
+				DA3472AC1A837D1D001D6417 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DAB0519A1A384F2F0059AB98 /* Build configuration list for PBXProject "VTiOSAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
