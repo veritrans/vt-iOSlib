@@ -46,6 +46,7 @@
         XCTAssertNotNil(token);
         if(exception == nil){
             NSLog(@"Token id: %@",token.token_id);
+            NSLog(@"Token redirect url: %@",token.redirect_url);
             XCTAssertNotNil(token);
         }else{
             NSLog(@"Reason: %@",exception.reason);
