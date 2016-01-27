@@ -23,6 +23,7 @@
 -(void)capture;
 -(void)charge;
 -(void) getToken:(void(^)(VTToken* token, NSException* exception)) completionHandler;
+-(void) registerCard:(void(^)(NSData* savedToken, NSException* exception)) completionHandler;
 
 @end
 

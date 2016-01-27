@@ -21,6 +21,7 @@
 +(void)setVT_IsProduction:(BOOL)val;
 
 +(NSString*)getTokenUrl;
++(NSString*)getRegisterCardUrl;
 
 @end
 
