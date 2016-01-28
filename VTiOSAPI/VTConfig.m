@@ -36,6 +36,13 @@ static BOOL _isProduction;
     return @"https://api.sandbox.veritrans.co.id/v2/token";
 }
 
++(NSString*) getRegisterCardUrl{
+    if(_isProduction){
+        return @"https://api.veritrans.co.id/v2/card/register";
+    }
+    return @"https://api.sandbox.veritrans.co.id/v2/card/register";
+}
+
 
 @end
 

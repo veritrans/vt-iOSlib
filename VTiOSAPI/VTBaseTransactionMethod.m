@@ -29,5 +29,9 @@
     [NSException raise:NSInternalInconsistencyException format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
+-(void)registerCard:(void (^)(NSData *, NSException *))completionHandler{
+    [NSException raise:NSInternalInconsistencyException format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
 @end
 
