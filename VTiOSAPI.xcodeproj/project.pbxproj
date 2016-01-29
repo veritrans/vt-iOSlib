@@ -37,6 +37,16 @@
 		DAA2755F1A39A98800940A14 /* VTDirect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2755E1A39A98800940A14 /* VTDirect.m */; };
 		DAB051AB1A384F2F0059AB98 /* libVTiOSAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0519F1A384F2F0059AB98 /* libVTiOSAPI.a */; };
 		DAB051BA1A384F710059AB98 /* VTBaseTransactionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB051B91A384F710059AB98 /* VTBaseTransactionMethod.m */; };
+		EDBDE1551C5B2DD100AA1703 /* VTConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA275441A39832C00940A14 /* VTConfig.h */; };
+		EDBDE1561C5B2DD100AA1703 /* VTAddress.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB051BE1A3851D20059AB98 /* VTAddress.h */; };
+		EDBDE1571C5B2DD100AA1703 /* VTBaseTransaction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA2753B1A394EA200940A14 /* VTBaseTransaction.h */; };
+		EDBDE1581C5B2DD200AA1703 /* VTCardDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA2753E1A39508000940A14 /* VTCardDetails.h */; };
+		EDBDE1591C5B2DD200AA1703 /* VTCustomerDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA2754A1A3995EB00940A14 /* VTCustomerDetails.h */; };
+		EDBDE15A1C5B2DD200AA1703 /* VTItemDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA2754D1A39971700940A14 /* VTItemDetails.h */; };
+		EDBDE15B1C5B2DD200AA1703 /* VTToken.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA275501A3999E600940A14 /* VTToken.h */; };
+		EDBDE15C1C5B2DD200AA1703 /* VTTransactionDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA275531A399A8D00940A14 /* VTTransactionDetails.h */; };
+		EDBDE15D1C5B2DD200AA1703 /* VTBaseTransactionMethod.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAB051BB1A384F910059AB98 /* VTBaseTransactionMethod.h */; };
+		EDBDE15E1C5B2DD200AA1703 /* VTDirect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAA2755D1A39A98800940A14 /* VTDirect.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				EDBDE1551C5B2DD100AA1703 /* VTConfig.h in CopyFiles */,
+				EDBDE1561C5B2DD100AA1703 /* VTAddress.h in CopyFiles */,
+				EDBDE1571C5B2DD100AA1703 /* VTBaseTransaction.h in CopyFiles */,
+				EDBDE1581C5B2DD200AA1703 /* VTCardDetails.h in CopyFiles */,
+				EDBDE1591C5B2DD200AA1703 /* VTCustomerDetails.h in CopyFiles */,
+				EDBDE15A1C5B2DD200AA1703 /* VTItemDetails.h in CopyFiles */,
+				EDBDE15B1C5B2DD200AA1703 /* VTToken.h in CopyFiles */,
+				EDBDE15C1C5B2DD200AA1703 /* VTTransactionDetails.h in CopyFiles */,
+				EDBDE15D1C5B2DD200AA1703 /* VTBaseTransactionMethod.h in CopyFiles */,
+				EDBDE15E1C5B2DD200AA1703 /* VTDirect.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +458,14 @@
 		DAB051B41A384F2F0059AB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv7s,
+					arm64,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
@@ -450,7 +477,14 @@
 		DAB051B51A384F2F0059AB98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_INCLUDING_64_BIT)",
+					armv7s,
+					arm64,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Anis (MZ7DUR4655)";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "079b7743-129e-4004-b1bd-85a0643ec14f";
