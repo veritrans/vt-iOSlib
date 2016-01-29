@@ -50,7 +50,7 @@ There are three participants during a payment process in VT-Direct: Merchant, Cu
 VTConfig.setVT_IsProduction(false)
 
 //set client key
-VTConfig.setCLIENT_KEY("< Your Client Key >”);
+VTConfig.setCLIENT_KEY("< Your Client Key >");
 ```
 
 2. Create VTDirect Object and set card details to get your token for current transaction
@@ -197,7 +197,7 @@ For a working example of an iOS application using this library you can check [he
 VTConfig.setVT_IsProduction(false)
 
 //set client key
-VTConfig.setCLIENT_KEY("< Your Client Key >”);
+VTConfig.setCLIENT_KEY("< Your Client Key >");
 ```
 
 2. Create VTDirect Object and set card details to get your token for current transaction
