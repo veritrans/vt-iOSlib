@@ -44,7 +44,7 @@ There are three participants during a payment process in VT-Direct: Merchant, Cu
 
 ### Retrieving Token
 
-1. Set your VTConfig for Sandbox Mode and Client Key
+1 Set your VTConfig for Sandbox Mode and Client Key
 ```objective-c
 //set environment
 VTConfig.setVT_IsProduction(false)
@@ -53,7 +53,7 @@ VTConfig.setVT_IsProduction(false)
 VTConfig.setCLIENT_KEY("< Your Client Key >");
 ```
 
-2. Create VTDirect Object and set card details to get your token for current transaction
+2 Create VTDirect Object and set card details to get your token for current transaction
 ```objective-c
 //Create VTDirect Object. Its config is Based on VTConfig Class that you set previously
 var vtDirect = VTDirect()
@@ -75,7 +75,8 @@ cardDetails.gross_amount = "100000"
 //Set VTCardDetails to VTDirect
 vtDirect.card_details = cardDetails
 ```
-3. Request Token
+
+3 Request Token
 ```objective-c
 //Simply Call getToken function and put your callback to handle data
 vtDirect.getToken { (responseData : NSData!, ex : NSException!) -> Void in
@@ -107,7 +108,7 @@ vtDirect.getToken { (responseData : NSData!, ex : NSException!) -> Void in
 }
 ```
 
-4. Create a callback function handler for 3D Secure web view
+4 Create a callback function handler for 3D Secure web view
 ```objective-c
 func webViewDidFinishLoad(webView: UIWebView) {
     // charge transaction after user has successfully authenticated by 3D Secure
@@ -119,7 +120,7 @@ func webViewDidFinishLoad(webView: UIWebView) {
 }
 ```
 
-5. Send token to your server
+5 Send token to your server
 After getting your token to your callback, you should send it to your server for example for charging.
 ```objective-c
 func chargeRequest(requestData: String) {
@@ -147,7 +148,7 @@ func chargeRequest(requestData: String) {
 }
 ```
 
-6. After sending your token to your server, now it’s time to charge your customer using your server key. In this example we will use PHP as our processing server with [Veritrans PHP Library](https://github.com/veritrans/veritrans-php).
+6 After sending your token to your server, now it’s time to charge your customer using your server key. In this example we will use PHP as our processing server with [Veritrans PHP Library](https://github.com/veritrans/veritrans-php).
 
 File : index.php
 ```php
@@ -191,7 +192,7 @@ If you are using another programming language, you can checkout another library 
 For a working example of an iOS application using this library you can check [here](https://github.com/dannypranoto/vt-iOSlib-SampleStore).
 
 ## Register Card
-1. Set your VTConfig for Sandbox Mode and Client Key
+1 Set your VTConfig for Sandbox Mode and Client Key
 ```objective-c
 //set environment
 VTConfig.setVT_IsProduction(false)
@@ -200,7 +201,7 @@ VTConfig.setVT_IsProduction(false)
 VTConfig.setCLIENT_KEY("< Your Client Key >");
 ```
 
-2. Create VTDirect Object and set card details to get your token for current transaction
+2 Create VTDirect Object and set card details to get your token for current transaction
 ```objective-c
 //Create VTDirect Object. Its config is Based on VTConfig Class that you set previously
 var vtDirect = VTDirect()
@@ -223,7 +224,7 @@ cardDetails.gross_amount = "100000"
 vtDirect.card_details = cardDetails
 ```
 
-3. Register user's credit card information to your server
+3 Register user's credit card information to your server
 ```objective-c
 // simply call registerCard function and put your callback to handle response data
 vtDirect.registerCard{(responseData: NSData!, ex: NSException!) -> Void in
@@ -260,7 +261,7 @@ vtDirect.registerCard{(responseData: NSData!, ex: NSException!) -> Void in
 }
 ```
 
-4. Using the saved_token_id for the next transaction.
+4 Using the saved_token_id for the next transaction.
 ```objective-c
 //Create VTDirect Object. Its config is Based on VTConfig Class that you set previously
 var vtDirect = VTDirect()
@@ -281,4 +282,4 @@ cardDetails.gross_amount = "100000"
 vtDirect.card_details = cardDetails
 ```
 
-5. For the next steps which are getting token and charging transaction is just the same with step 3,4,5 in Get Token section.
+5 For the next steps which are getting token and charging transaction is just the same with step 3,4,5 in Get Token section.
