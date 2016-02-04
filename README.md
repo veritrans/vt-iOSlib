@@ -235,7 +235,7 @@ vtDirect.registerCard{(responseData: NSData!, ex: NSException!) -> Void in
             var requestBody = JSON(data:responseData!)
             requestBody["user_id"] = "<PUT_YOUR_USER_ID>" // put your unique user_id to associate user's credit card ownership
 
-            var request = NSMutableURLRequest(URL: NSURL(string: "<PUT_YOUR_REGISTER_CARD_ENPOINT_HERE>")!)
+            var request = NSMutableURLRequest(URL: NSURL(string: "<PUT_YOUR_REGISTER_CARD_ENPOINT_HERE>/creditcard")!)
             var session = NSURLSession.sharedSession()
 
             // set HTTP request config
@@ -280,6 +280,16 @@ cardDetails.gross_amount = "100000"
 
 //Set VTCardDetails to VTDirect
 vtDirect.card_details = cardDetails
+```
+The SDK will then send the following GET request to MERCHANT_SERVER_ADDRESS/creditcard :
+```json
+{
+  "masked_card": "xxxxxx-xxxx",
+  "saved_token_id": "xxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status_code": "xxx",
+  "transaction_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "user_id": "xxxxxxx"
+}
 ```
 
 5 For the next steps which are getting token and charging transaction is just the same with step 3,4,5 in Get Token section.
