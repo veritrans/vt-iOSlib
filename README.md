@@ -1,5 +1,7 @@
 # Veritrans IOS Library
 
+### We are in the process of depricating this SDK, and will be publishing our latest SDK Soon. Please contact support@veritrans.co.id for more information
+
 ### Description
 By using this library, you will be able to securely collect credit card information without exposing sensitive credit card information to your servers. This library includes:
   * Get Token : getting token (includes 3D Secure transaction) from Veritrans payment gateway by using [VT-Direct](http://docs.veritrans.co.id/en/vtdirect/integration.html).
