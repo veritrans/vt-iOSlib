@@ -1,6 +1,6 @@
 # Veritrans IOS Library
 
-### We are in the process of depricating this SDK, and will be publishing our latest SDK Soon. Please contact support@veritrans.co.id for more information
+### We have depricated this SDK in favour of newer [iOS SDK](https://github.com/veritrans/Veritrans-ios-sdk)
 
 ### Description
 By using this library, you will be able to securely collect credit card information without exposing sensitive credit card information to your servers. This library includes:
